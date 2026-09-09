@@ -39,3 +39,7 @@ As células Q1–Q7 recebem **azul** quando a alternativa está correta e **verm
 A nota automática é calculada sobre as sete questões objetivas: `arredondar(acertos ÷ 7 × 10)`. O percentual também é calculado sobre as objetivas. As dissertativas permanecem disponíveis para uma etapa posterior de correção, caso a escola queira atribuir pontuação a elas.
 
 As imagens são ilustrações SVG didáticas incorporadas no próprio HTML; portanto, a atividade não depende de hospedagem ou download de imagens externas.
+
+## Fontes das imagens reais
+
+As imagens microscópicas e a fotografia do microscópio são provenientes do Wikimedia Commons e são carregadas por URL no HTML. Os créditos e as licenças aparecem abaixo de cada imagem: células da bochecha humana por Mulletsrokk, CC BY-SA 3.0; microscópio óptico por Aliva Sahoo, CC BY-SA 4.0; células vegetais em turgência por BioGenZambrano, CC BY-SA 4.0; e *Bacillus subtilis* por Dr Graham Beards, CC BY-SA 4.0. As páginas de origem são [células da bochecha](https://commons.wikimedia.org/wiki/File:Cheekcells_stained.jpg), [microscópio óptico](https://commons.wikimedia.org/wiki/File:Laboratory_Optical_Microscope.jpg), [células vegetais](https://commons.wikimedia.org/wiki/File:C%C3%A9lulas_de_flores_en_turgencia_Aumento_total-_400x.jpg) e [Bacillus subtilis](https://commons.wikimedia.org/wiki/File:Bacillus_subtilis_2.jpg).
