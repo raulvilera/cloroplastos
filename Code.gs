@@ -1,5 +1,5 @@
 const SHEET_ID = '1DVJ2kY3QDdi0YLUUWacYa7qkcURYkO7SckhZN-t99qg';
-const ANSWERS = {1:'A',2:'B',3:'C',4:'D',5:'B',6:'A',7:'C',8:'A',9:'B',10:'C'};
+const ANSWERS = {1:'A',2:'B',3:'B',4:'D',5:'A',6:'C',7:'B',8:'D',9:'C',10:'A'};
 
 function doGet() {
   const t = HtmlService.createTemplateFromFile('index');

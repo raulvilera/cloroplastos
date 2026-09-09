@@ -23,3 +23,8 @@ As imagens 3D desta atualização foram geradas para fins didáticos e estão ar
 | `assets/cloroplasto-3d.png` | Estruturas internas do cloroplasto |
 | `assets/celulas-3d-comparacao.png` | Comparação entre célula procarionte e célula vegetal |
 | `assets/saneamento-transmissao-3d.png` | Saneamento e interrupção da transmissão |
+
+| `assets/bacteria-3d.png` | Modelo 3D de célula procarionte |
+| `assets/fungo-3d.png` | Modelo 3D de leveduras e hifas |
+| `assets/protozoario-3d.png` | Modelo 3D de protozoário ciliado |
+| `assets/virus-celula-3d.png` | Modelo 3D de interação vírus-célula hospedeira |

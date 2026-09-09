@@ -50,3 +50,6 @@ As imagens da versão atual combinam fotografias de microscópio, micrografias e
 ## Atualização: modelos 3D e saúde coletiva
 
 A atividade passou a usar três imagens 3D didáticas: corte de cloroplasto, comparação entre célula procarionte e célula vegetal e uma cena sobre saneamento e interrupção da transmissão. Também foram incluídas questões objetivas e dissertativas sobre água tratada, coleta de esgoto, higiene, vias de transmissão e prevenção de doenças causadas por microrganismos.
+
+
+A revisão de contextualização transforma os itens objetivos em situações-problema, distribui o gabarito entre as letras e mantém alternativas com extensão e plausibilidade semelhantes. As imagens 3D agora são específicas para bactéria, fungo, protozoário e interação vírus-célula, reduzindo repetições visuais.
