@@ -11,8 +11,8 @@ function getRoster_() {
   const ss = SpreadsheetApp.openById(SHEET_ID), sh = ss.getSheetByName('Roster');
   const out = {'6º Ano A':[], '6º Ano C':[]};
   if (!sh || sh.getLastRow() < 2) return out;
-  sh.getRange(2,1,sh.getLastRow()-1,3).getDisplayValues().forEach(r => {
-    if (r[0] && out[r[0]] && r[1]) out[r[0]].push({nome:r[1],ra:r[2]});
+  sh.getRange(2,1,sh.getLastRow()-1,5).getDisplayValues().forEach(r => {
+    if (r[0] && out[r[0]] && r[1]) out[r[0]].push({nome:r[1],ra:r[2],chamada:r[3],email:r[4]});
   });
   return out;
 }
@@ -20,7 +20,7 @@ function getRoster_() {
 function setup() {
   const ss = SpreadsheetApp.openById(SHEET_ID);
   let sh = ss.getSheetByName('Respostas') || ss.insertSheet('Respostas');
-  const headers = ['Data/hora','Turma','Nome','RA','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8 — dissertativa','Q9 — dissertativa','Q10 — dissertativa','Gabarito objetivos','Q1–Q7 — resultado','Acertos objetivos','Nota inteira','Percentual','AE5 — status','AE6 — status','AEs não atingidas'];
+  const headers = ['Data/hora','Data de realização','Turma','Nome','RA','Nº de chamada','E-mail institucional','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8 — dissertativa','Q9 — dissertativa','Q10 — dissertativa','Gabarito objetivos','Q1–Q7 — resultado','Acertos objetivos','Nota inteira','Percentual','AE5 — status','AE6 — status','AEs não atingidas'];
   sh.clear(); sh.getRange(1,1,1,headers.length).setValues([headers]).setFontWeight('bold').setBackground('#07528f').setFontColor('#ffffff');
   sh.setFrozenRows(1); sh.getRange('A:A').setNumberFormat('dd/mm/yyyy hh:mm'); sh.autoResizeColumns(1,headers.length);
   let roster = ss.getSheetByName('Roster') || ss.insertSheet('Roster');
@@ -44,7 +44,7 @@ function submitAnswers(p) {
   const nota=Math.round((acertos/7)*10), percentual=Math.round((acertos/7)*100);
   const ae5Ok=answers.slice(0,6).filter((v,i)=>v===ANSWERS[i+1]).length>=4, ae6Ok=answers[6]===ANSWERS[7];
   const nao=[]; if(!ae5Ok) nao.push('AE5 — organização básica das células'); if(!ae6Ok) nao.push('AE6 — tecidos e sistemas');
-  const row=[new Date(),p.turma,p.nome,p.ra,...answers,a[8]||'',a[9]||'',a[10]||'',Object.values(ANSWERS).join(' | '),status.join(' | '),acertos,nota,percentual+'%',ae5Ok?'ATINGIDA':'NÃO ATINGIDA',ae6Ok?'ATINGIDA':'NÃO ATINGIDA',nao.join(' | ')||'Nenhuma'];
+  const row=[new Date(),p.dataRealizacao||'',p.turma,p.nome,p.ra,p.chamada||'',p.email||'',...answers,a[8]||'',a[9]||'',a[10]||'',Object.values(ANSWERS).join(' | '),status.join(' | '),acertos,nota,percentual+'%',ae5Ok?'ATINGIDA':'NÃO ATINGIDA',ae6Ok?'ATINGIDA':'NÃO ATINGIDA',nao.join(' | ')||'Nenhuma'];
   sh.appendRow(row); sh.getRange(sh.getLastRow(),1).setNumberFormat('dd/mm/yyyy hh:mm');
   return {nota,percentual,naoAtingidas:nao.join(', ')||'nenhuma'};
 }
