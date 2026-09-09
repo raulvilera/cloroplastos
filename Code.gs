@@ -48,3 +48,10 @@ function submitAnswers(p) {
   sh.appendRow(row); sh.getRange(sh.getLastRow(),1).setNumberFormat('dd/mm/yyyy hh:mm');
   return {nota,percentual,naoAtingidas:nao.join(', ')||'nenhuma'};
 }
+
+
+function doPost(e) {
+  const payload = JSON.parse(e.postData.contents || '{}');
+  const result = submitAnswers(payload);
+  return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+}
