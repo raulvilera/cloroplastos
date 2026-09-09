@@ -13,3 +13,13 @@ As imagens abaixo são cópias locais de arquivos do Wikimedia Commons, para que
 | `assets/estacao-tratamento.jpg` | Tratamento de água (questão 7) | [Kafue water treatment plant picture 2](https://commons.wikimedia.org/wiki/File:Kafue_water_treatment_plant_picture_2.jpg) |
 
 As legendas da atividade deixam explícito quando a imagem é uma micrografia e evitam confundir fotografia científica com esquema explicativo.
+
+## Imagens 3D
+
+As imagens 3D desta atualização foram geradas para fins didáticos e estão armazenadas localmente no repositório. Elas funcionam como modelos explicativos, não como micrografias reais.
+
+| Arquivo | Tema |
+|---|---|
+| `assets/cloroplasto-3d.png` | Estruturas internas do cloroplasto |
+| `assets/celulas-3d-comparacao.png` | Comparação entre célula procarionte e célula vegetal |
+| `assets/saneamento-transmissao-3d.png` | Saneamento e interrupção da transmissão |
