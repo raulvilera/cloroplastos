@@ -4,8 +4,8 @@ Pacote para publicar uma atividade interativa de Ciências para as turmas **6º 
 
 ## Arquivos
 
-- `index.html`: interface da atividade, com 7 questões objetivas, 3 dissertativas, imagens SVG incorporadas, dropdowns dependentes e feedback visual.
-- `Code.gs`: backend do Google Apps Script. Registra as respostas na planilha, calcula acertos objetivos, nota inteira de 0 a 10, percentual e status das aprendizagens.
+- `index.html`: interface da atividade, com 7 questões objetivas, 3 dissertativas, imagens SVG incorporadas, dropdowns dependentes e feedback visual. A versão publicada no GitHub Pages carrega a lista de alunos diretamente no HTML.
+- `Code.gs`: backend do Google Apps Script. Registra as respostas na planilha, calcula acertos objetivos, nota inteira de 0 a 10, percentual e status das aprendizagens, inclusive quando recebe dados por `doPost`.
 - `Roster.csv`: lista extraída dos arquivos `6ºAnoA(WD).xlt` e `6ºAnoC(WD).xlt`, com turma, nome e RA.
 
 ## Alinhamento pedagógico
@@ -22,6 +22,11 @@ As questões 1 a 9 mobilizam a **AE5 — analisar a organização básica das c�
 6. Na aba `Roster`, cole os dados de `Roster.csv` a partir da célula A1. Se a aba já possuir dados, substitua-os pelos três campos: `Turma`, `Nome`, `RA`.
 7. Volte ao Apps Script e execute `setup` novamente para garantir as regras de formatação condicional.
 8. Selecione **Implantar → Nova implantação → Aplicativo da web**. Escolha executar como **usuário que sou eu** e acesso **qualquer pessoa com o link** (ou a política institucional equivalente). Copie a URL gerada para os alunos.
+9. No `index.html`, localize `const SCRIPT_URL = "";` e substitua o conteúdo vazio pela URL do Aplicativo da Web. Faça um novo commit para que o GitHub Pages envie as respostas à planilha. Sem essa URL, a atividade continua funcionando para visualização e preenchimento, mas não grava os dados.
+
+## GitHub Pages versus Apps Script
+
+O GitHub Pages é um servidor estático: ele não interpreta `<?= roster ?>` e não possui `google.script.run`. Por isso, a atividade publicada no GitHub Pages usa a lista incorporada no HTML e envia as respostas por `fetch` para `doPost(e)` do Apps Script. Se o arquivo for publicado diretamente dentro do editor do Apps Script, a integração `google.script.run` também pode ser usada, mas a versão deste repositório foi preparada para o GitHub Pages.
 
 ## O que é registrado
 
