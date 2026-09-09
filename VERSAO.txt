@@ -1,2 +1,2 @@
 ATIVIDADE CIÊNCIAS 6º ANO — VERSÃO DIVERSIFICADA
-Commit de publicação: cobertura das aulas 1 a 16, imagens reais específicas e gabarito sincronizado.
+Commit de publicação: correção de sintaxe, imagens científicas reais locais, legendas didáticas e gabarito sincronizado.

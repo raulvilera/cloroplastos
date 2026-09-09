@@ -4,7 +4,9 @@ Pacote para publicar uma atividade interativa de Ciências para as turmas **6º 
 
 ## Arquivos
 
-- `index.html`: interface da atividade, com 7 questões objetivas, 3 dissertativas, imagens SVG incorporadas, dropdowns dependentes e feedback visual. A versão publicada no GitHub Pages carrega a lista de alunos diretamente no HTML.
+- `index.html`: interface da atividade, com 7 questões objetivas, 3 dissertativas, fotografias e micrografias científicas locais, legendas didáticas, dropdowns dependentes e feedback visual. A versão publicada no GitHub Pages carrega a lista de alunos diretamente no HTML.
+- `assets/`: imagens científicas reais copiadas localmente para a atividade.
+- `IMAGENS.md`: créditos e links das páginas de origem das imagens.
 - `Code.gs`: backend do Google Apps Script. Registra as respostas na planilha, calcula acertos objetivos, nota inteira de 0 a 10, percentual e status das aprendizagens, inclusive quando recebe dados por `doPost`.
 - `Roster.csv`: lista extraída dos arquivos `6ºAnoA(WD).xlt` e `6ºAnoC(WD).xlt`, com turma, nome e RA.
 
@@ -38,8 +40,8 @@ As células Q1–Q7 recebem **azul** quando a alternativa está correta e **verm
 
 A nota automática é calculada sobre as sete questões objetivas: `arredondar(acertos ÷ 7 × 10)`. O percentual também é calculado sobre as objetivas. As dissertativas permanecem disponíveis para uma etapa posterior de correção, caso a escola queira atribuir pontuação a elas.
 
-As imagens são ilustrações SVG didáticas incorporadas no próprio HTML; portanto, a atividade não depende de hospedagem ou download de imagens externas.
+As imagens são fotografias e micrografias científicas armazenadas na pasta `assets/`; portanto, a atividade não depende de download de imagens externas durante o uso. As legendas explicam o que observar e informam quando se trata de uma micrografia.
 
 ## Fontes das imagens reais
 
-As imagens da versão atual são **esquemas didáticos autorais em SVG**, elaborados no estilo visual de livros didáticos: células com rótulos, microscópio com suas partes, cloroplastos e fotossíntese, comparação procarionte/eucarionte, fungos com leveduras e hifas, protozoário, tratamento de água, vírus e níveis de organização. Essa escolha evita fotografias repetidas e torna as estruturas e relações mais legíveis para estudantes do 6º ano.
+As imagens da versão atual combinam fotografias de microscópio, micrografias eletrônicas e uma fotografia de estação de tratamento. Os créditos completos, links de origem e usos pedagógicos estão em [`IMAGENS.md`](IMAGENS.md). Os esquemas conceituais continuam explicados no enunciado e nas legendas, mas não são apresentados como se fossem fotografias.

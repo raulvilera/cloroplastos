@@ -26,10 +26,10 @@ function setup() {
   let roster = ss.getSheetByName('Roster') || ss.insertSheet('Roster');
   if (roster.getLastRow()===0) roster.getRange(1,1,1,3).setValues([['Turma','Nome','RA']]);
   roster.getRange(1,1,1,3).setFontWeight('bold').setBackground('#07528f').setFontColor('#ffffff');
-  const correct = SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied('=REGEXMATCH($P2,"CORRETA")').setBackground('#2f75b5').setFontColor('#ffffff').setRanges([sh.getRange('E2:K')]).build();
-  const wrong = SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied('=REGEXMATCH($P2,"ERRADA")').setBackground('#c00000').setFontColor('#ffffff').setRanges([sh.getRange('E2:K')]).build();
-  const aeGood = SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo('ATINGIDA').setBackground('#2f75b5').setFontColor('#ffffff').setRanges([sh.getRange('T2:U')]).build();
-  const aeBad = SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo('NÃO ATINGIDA').setBackground('#c00000').setFontColor('#ffffff').setRanges([sh.getRange('T2:U')]).build();
+  const correct = SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied('=REGEXMATCH($S2,"CORRETA")').setBackground('#2f75b5').setFontColor('#ffffff').setRanges([sh.getRange('H2:N')]).build();
+  const wrong = SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied('=REGEXMATCH($S2,"ERRADA")').setBackground('#c00000').setFontColor('#ffffff').setRanges([sh.getRange('H2:N')]).build();
+  const aeGood = SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo('ATINGIDA').setBackground('#2f75b5').setFontColor('#ffffff').setRanges([sh.getRange('W2:X')]).build();
+  const aeBad = SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo('NÃO ATINGIDA').setBackground('#c00000').setFontColor('#ffffff').setRanges([sh.getRange('W2:X')]).build();
   sh.setConditionalFormatRules([correct,wrong,aeGood,aeBad]);
   return 'Configuração concluída. Agora cole o Roster.csv na aba Roster e publique como aplicativo da web.';
 }
